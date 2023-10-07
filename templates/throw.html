@@ -13,7 +13,10 @@
     <body>
         <div class="mx-auto">
             <br>
-            <center><h1 style="font-size: 72px; color: {{ colour }};">{{ sum }}</h1></center>
+            <center>
+                <h1 style="font-size: 72px; color: {{ colour }};">{{ sum }}</h1>
+                <h5 class="my-3">{{ dice }}</h5>
+            </center>
         </div>
         <form action="/throw" method="get">
             <center>

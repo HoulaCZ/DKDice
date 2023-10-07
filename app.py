@@ -41,7 +41,10 @@ def throw():
             th = random.randint(1,(diceValue))
             sum = th + sum
         colour = crit(dice, sum)
-        return render_template("throw.html", sum = sum, colour = colour)
+        dice = dice.replace("k", "d")
+        if dice == "1d100":
+            dice = "d%"
+        return render_template("throw.html", sum = sum, colour = colour, dice = dice)
     else:
         message = "Wrong dice!"
         return render_template("error.html", message = message)
