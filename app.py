@@ -1,5 +1,5 @@
 from flask import Flask, redirect, render_template, request
-import re
+import re   
 import random
 
 # Configure application
