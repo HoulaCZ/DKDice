@@ -40,9 +40,21 @@ def throw():
         for i in range(1,(diceAmounts+1)):
             th = random.randint(1,(diceValue))
             sum = th + sum
-
-        return render_template("throw.html", sum = sum)
+        colour = crit(dice, sum)
+        return render_template("throw.html", sum = sum, colour = colour)
     else:
         message = "Wrong dice!"
         return render_template("error.html", message = message)
+
+def crit(dice, sum):
+    if dice == "1k20" or dice == "1d20":
+        if sum == 20:
+            colour = "#0000FF"
+        elif sum == 1:
+            colour = "#FF0000"
+        else:
+            colour = "#000000"
+    else:
+        colour = "#000000"
+    return colour
 
